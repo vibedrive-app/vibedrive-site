@@ -1,0 +1,12 @@
+title: VibeDrive
+description: Real-time stem-driven music for the road.
+url: https://vibedrive.app
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
