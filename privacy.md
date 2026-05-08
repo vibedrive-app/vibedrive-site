@@ -33,8 +33,7 @@ Until I incorporate a private limited company or LLP, I am personally the Data F
 
 This policy applies to the VibeDrive Android application distributed through the Google Play Store. It does not apply to:
 
-- Third-party services we integrate with (Google, Firebase) — they are governed by their own privacy notices, summarised in §6.
-- Audio files you store in your own Google Drive — those are governed by Google's terms.
+- Third-party services we integrate with (Google, Firebase, Cloudflare) — they are governed by their own privacy notices, summarised in §6.
 - Any future website or marketing pages, unless that page links back to this policy.
 
 ## 3. What VibeDrive does
@@ -76,7 +75,7 @@ I do **not** ask for your government-issued ID, payment-card numbers, or banking
 |---|---|---|
 | Sign-in | Firebase ID token, Google account email | Used to identify you; email stored in your `users/{uid}` record |
 | Track upload | Source audio file via a 1-hour signed Google Cloud Storage URL | Stored in the `vibedrive-uploads` bucket; **deleted automatically after 1 day** |
-| Stem separation | Job parameters (UID, jobId, GCS path) | Triggers a Cloud Run GPU job; intermediate WAV stems written to `vibedrive-processing` bucket and **deleted automatically after 1 day**; final `.vdx` written to `vibedrive-output` bucket and **deleted automatically after 7 days** |
+| Stem separation | Job parameters (UID, jobId, GCS path) | Triggers a Cloud Run GPU job; intermediate WAV stems written to `vibedrive-processing` bucket and **deleted automatically after 1 day**; final `.vdx` written to your `vibedrive-vault` cloud library on Cloudflare R2 and kept until you delete it (subject to your plan's library cap; see §8) |
 | Job notifications | FCM token (sent via `PUT /v1/users/fcm-token`) | Stored in your `users/{uid}` record; used by FCM to push job-status messages to your device |
 | Track transitions | Per-track derived metadata (BPM, drum pattern, vocal segments, song structure) for the tracks you are mixing | Used in-memory to compute transition recommendations; **not stored** |
 | Subscription verification | Google Play purchase token, product ID | Sent to Google Play Developer API for verification; entitlement is recorded in your `users/{uid}` record |
@@ -88,7 +87,6 @@ I do **not** ask for your government-issued ID, payment-card numbers, or banking
 | Source | Information | Purpose |
 |---|---|---|
 | Firebase Authentication (Google) | Your Google account email and a stable Firebase UID | Authentication |
-| Google Drive API (only if you connect Drive) | OAuth refresh token, plus access to **only the files you explicitly select** through VibeDrive (`drive.file` scope) | Storing and streaming stems from your own Drive (optional feature) |
 | Google Play Billing | Purchase token, product ID, base-plan ID, purchase state | Verifying your subscription |
 | Firebase App Check / Google Play Integrity API | Attestation tokens proving the request comes from a genuine, unmodified install of VibeDrive | Anti-abuse — preventing tampered clients from calling our backend |
 
@@ -138,35 +136,13 @@ The following providers process information on our behalf as **Data Processors**
 | Firebase Cloud Messaging (FCM) | Google | FCM token, message payloads (job ID, download URL, BPM, error code) | https://firebase.google.com/support/privacy |
 | Google Play Integrity API | Google | Device + app integrity verdict | https://policies.google.com/privacy |
 | Google Cloud Run | Google | Backend API requests, server logs | https://cloud.google.com/terms/cloud-privacy-notice |
-| Google Cloud Storage | Google | Audio uploads, stems, `.vdx` outputs | https://cloud.google.com/terms/cloud-privacy-notice |
+| Google Cloud Storage | Google | Audio uploads (`vibedrive-uploads`) and intermediate stems (`vibedrive-processing`) | https://cloud.google.com/terms/cloud-privacy-notice |
+| Cloudflare R2 | Cloudflare | Your `.vdx` cloud library (`vibedrive-vault`) | https://www.cloudflare.com/privacypolicy/ |
 | Google Cloud Firestore | Google | User and job records | https://cloud.google.com/terms/cloud-privacy-notice |
 | Google Cloud Tasks | Google | Job dispatch payloads (UID, jobId, GCS paths) | https://cloud.google.com/terms/cloud-privacy-notice |
 | Google Play Billing + Play Developer API | Google | Purchase tokens, product IDs | https://policies.google.com/privacy |
-| Google Drive API (only if you connect Drive) | Google | Files you authorize VibeDrive to access | https://policies.google.com/privacy |
 
-We do not currently use any non-Google processors. If we add one, this table will be updated before that processor receives any production data.
-
-### 6.1. Google Drive — Limited Use disclosure
-
-VibeDrive's use and transfer to any other app of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the **Limited Use** requirements.
-
-We use Google Drive scopes only for the file-management features within VibeDrive. Specifically:
-
-| OAuth scope | What it lets VibeDrive do | Why it is needed |
-|---|---|---|
-| `https://www.googleapis.com/auth/drive.file` | Read, create, and modify **only those files in your Drive that you explicitly open or create with VibeDrive**. We cannot see any other file in your Drive. | Storing your `.vdx` outputs in your own Drive so they are accessible across devices |
-| `openid`, `email`, `profile` | Identify your Google account | Sign-in via Firebase Authentication |
-
-We do **not** request `drive`, `drive.readonly`, `drive.metadata`, or any other broader Drive scope.
-
-We do **not**:
-
-- Use Drive data to serve advertisements.
-- Allow humans to read your Drive data, except (a) with your explicit consent, (b) when necessary for security purposes (e.g., investigating abuse), (c) to comply with applicable law, or (d) where the data has been aggregated and anonymised.
-- Transfer Drive data to anyone outside the processors listed in §6.
-- Use Drive data for any purpose unrelated to providing the App's core features.
-
-You can revoke VibeDrive's Drive access at any time at https://myaccount.google.com/permissions.
+If we add another processor beyond those listed above, this table will be updated before that processor receives any production data.
 
 ## 7. Sharing, disclosure, and cross-border transfer
 
@@ -181,7 +157,7 @@ We do **not sell** your personal data, and we do **not share** it for cross-cont
 
 ### 7.2. Cross-border transfer
 
-Although the Data Fiduciary (the proprietor) is resident in India, the App's backend infrastructure is operated on **Google Cloud Platform in the United States** (Cloud Run, Cloud Storage, Firestore, Cloud Tasks; primary region `us-central1`). When you use the App, your personal data is transferred to and processed in the United States.
+Although the Data Fiduciary (the proprietor) is resident in India, the App's backend infrastructure is operated on **Google Cloud Platform in the United States** (Cloud Run, Cloud Storage, Firestore, Cloud Tasks; primary region `us-central1`) and on **Cloudflare R2 object storage** for your `.vdx` cloud library (region selected per launch market). When you use the App, your personal data is transferred to and processed in those regions.
 
 We rely on:
 
@@ -196,7 +172,7 @@ We may, in the future, migrate to Google Cloud regions in India (`asia-south1`, 
 |---|---|
 | Source audio you upload (`vibedrive-uploads` bucket) | **Deleted automatically after 1 day** |
 | Intermediate WAV stems (`vibedrive-processing` bucket) | **Deleted automatically after 1 day** |
-| Final `.vdx` output (`vibedrive-output` bucket) | **Deleted automatically after 7 days**; signed download URLs expire after 7 days |
+| Final `.vdx` cloud library (`vibedrive-vault` bucket on Cloudflare R2) | Kept until you delete the track via **Library → Delete** or `DELETE /v1/users/me/tracks/{trackId}`. Subject to your plan's library cap (1 GB Free / 5 GB Starter / 50 GB Pro). On subscription downgrade, over-cap tracks are marked `frozen` after a 30-day grace and remain stored (but not playable) until you delete or re-upgrade. Signed download URLs expire after 1 hour. |
 | User record in Firestore (email, plan, FCM token, quota) | Until you delete your account (see §13), or 24 months after your last sign-in, whichever is sooner |
 | Job history in Firestore | Same as the user record |
 | On-device caches (stems, settings, sensor smoothing state) | Until you uninstall the App or clear app data |
@@ -307,7 +283,7 @@ When the deletion request is processed, the backend executes the following casca
 1. Your Firebase refresh tokens are **revoked immediately** — any cached session is invalidated.
 2. Your `users/{uid}` record is tombstoned in Firestore. From this point we treat your account as non-existent for read traffic.
 3. Any in-flight separation jobs you own are **failed** with `error: ACCOUNT_DELETED`; reserved quota is released.
-4. **All your blobs in `vibedrive-uploads/{uid}/`, `vibedrive-processing/{uid}/`, and `vibedrive-output/{uid}/` are deleted from Google Cloud Storage**, typically within seconds.
+4. **All your blobs are deleted** — `vibedrive-uploads/{uid}/` and `vibedrive-processing/{uid}/` from Google Cloud Storage, and `vibedrive-vault/{uid}/` from Cloudflare R2 — typically within seconds.
 5. Your job records in Firestore are deleted.
 6. Your `users/{uid}` record is deleted.
 7. Your Firebase Authentication record is deleted.

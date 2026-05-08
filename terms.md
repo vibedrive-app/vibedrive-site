@@ -186,7 +186,7 @@ For US users, we also accept notices that meet the requirements of 17 U.S.C. § 
 
 ## 10. Third-party services
 
-The Service relies on third-party services, including Google Play Services, Firebase, Google Cloud Run, Google Cloud Storage, Google Drive (optional), and Google Play Billing. Your use of those services is subject to the third party's own terms and privacy policies, summarised in our Privacy Policy.
+The Service relies on third-party services, including Google Play Services, Firebase, Google Cloud Run, Google Cloud Storage, Cloudflare R2 (object storage for your cloud library), and Google Play Billing. Your use of those services is subject to the third party's own terms and privacy policies, summarised in our Privacy Policy.
 
 We are not responsible for third-party services. Outages, bugs, or policy changes at those providers may affect the Service.
 
@@ -222,7 +222,7 @@ We do not warrant that:
 - The Service will be uninterrupted, error-free, or secure.
 - Stem-separation results will meet your expectations or be free of audio artifacts.
 - The driving-detection features will accurately characterise all driving conditions.
-- Your Content will be preserved without loss; **the cloud retention windows are 1 day for uploads and intermediate stems and 7 days for `.vdx` outputs (see Privacy Policy §8). You are responsible for downloading and keeping your own copies before those deadlines.**
+- Your Content will be preserved without loss; **uploads and intermediate stems are deleted within 1 day; final `.vdx` outputs are kept in your cloud library until you delete them, subject to your plan's library cap (see Privacy Policy §8). On subscription downgrade, over-cap tracks become non-playable after a 30-day grace period until you delete enough to fit the new cap or re-upgrade.**
 
 These disclaimers apply only to the extent permitted by law. As a consumer in India, the EEA, the UK, Australia, or another jurisdiction with mandatory consumer guarantees, you retain those rights.
 
