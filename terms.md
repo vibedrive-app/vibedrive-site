@@ -9,13 +9,13 @@ permalink: /terms/
 **Effective date:** 2026-05-02
 **Last updated:** 2026-05-02
 
-> **Draft notice.** This document is a publishable starting point reviewed by an AI assistant against the VibeDrive client and Cloud Run backend code. It is **not legal advice**. Before linking it from the Play Store listing or in-app, have it reviewed by an advocate enrolled with an Indian Bar Council, fill in `{{YOUR_FULL_LEGAL_NAME}}`, `{{YOUR_REGISTERED_OFFICE_ADDRESS}}`, and `{{YOUR_CITY}}, {{YOUR_STATE}}` (used for forum), and confirm you are happy with the dispute-resolution and refund clauses.
+> **Draft notice.** This document is a publishable starting point reviewed by an AI assistant against the VibeDrive client and Cloud Run backend code. It is **not legal advice**. Before linking it from the Play Store listing or in-app, have it reviewed by an advocate enrolled with an Indian Bar Council, and confirm you are happy with the dispute-resolution and refund clauses.
 
 ---
 
 ## 1. Agreement to these Terms
 
-These Terms & Conditions ("**Terms**") form a binding contract between you and **{{YOUR_FULL_LEGAL_NAME}}**, an individual carrying on business as a sole proprietor in India under the trade name **"VibeDrive"** (referred to here as "**we**", "**us**", "**I**", or "**VibeDrive**"). They govern your use of the VibeDrive Android application (Google Play package `com.drivex.vibedrive`, the "**App**") and any related backend services (collectively, the "**Service**").
+These Terms & Conditions ("**Terms**") form a binding contract between you and **Prakhar Singh**, an individual carrying on business as a sole proprietor in India under the trade name **"VibeDrive"** (referred to here as "**we**", "**us**", "**I**", or "**VibeDrive**"). They govern your use of the VibeDrive Android application (Google Play package `com.drivex.vibedrive`, the "**App**") and any related backend services (collectively, the "**Service**").
 
 **By installing, signing into, or using the App, you agree to these Terms.** If you do not agree, do not use the Service.
 
@@ -72,7 +72,7 @@ Your Content remains yours. We do not claim ownership in it.
 
 ### 6.3. Licence you grant us
 
-You grant **{{YOUR_FULL_LEGAL_NAME}}** a worldwide, royalty-free, non-exclusive licence to host, store, transmit, process, and adapt Your Content **solely** to operate the Service for you (e.g., to run separation jobs, store stems, deliver `.vdx` outputs back to you, and back them up). This licence ends when Your Content is deleted from our systems per the retention table in the Privacy Policy.
+You grant **Prakhar Singh** a worldwide, royalty-free, non-exclusive licence to host, store, transmit, process, and adapt Your Content **solely** to operate the Service for you (e.g., to run separation jobs, store stems, deliver `.vdx` outputs back to you, and back them up). This licence ends when Your Content is deleted from our systems per the retention table in the Privacy Policy.
 
 We do **not** use Your Content to train machine-learning models, build advertising profiles, or for any other purpose unrelated to operating the Service for you.
 
@@ -164,7 +164,7 @@ Each plan has a monthly minute quota (§8.1). Quotas reset monthly on a cycle an
 
 ### 9.1. Our IP
 
-The App, the backend, our brand, our logos, and all content other than Your Content are owned by **{{YOUR_FULL_LEGAL_NAME}}** or our licensors and are protected by the **Indian Copyright Act, 1957**, the **Trade Marks Act, 1999**, and equivalent laws in other jurisdictions. Except for the licence expressly granted in §5, no rights are granted to you.
+The App, the backend, our brand, our logos, and all content other than Your Content are owned by **Prakhar Singh** or our licensors and are protected by the **Indian Copyright Act, 1957**, the **Trade Marks Act, 1999**, and equivalent laws in other jurisdictions. Except for the licence expressly granted in §5, no rights are granted to you.
 
 ### 9.2. Feedback
 
@@ -237,7 +237,7 @@ These limits do not apply to liability that cannot be excluded or limited under 
 
 ## 15. Indemnification
 
-You agree to indemnify and hold harmless **{{YOUR_FULL_LEGAL_NAME}}**, our processors, and our agents from any claim, demand, loss, liability, damage, or expense (including reasonable legal fees) arising out of or related to: (i) your use of the Service; (ii) Your Content; (iii) your violation of these Terms; or (iv) your violation of any third party's rights or any applicable law.
+You agree to indemnify and hold harmless **Prakhar Singh**, our processors, and our agents from any claim, demand, loss, liability, damage, or expense (including reasonable legal fees) arising out of or related to: (i) your use of the Service; (ii) Your Content; (iii) your violation of these Terms; or (iv) your violation of any third party's rights or any applicable law.
 
 This section does not apply where prohibited by law and is limited to the extent permitted in consumer contracts in your jurisdiction.
 
@@ -253,7 +253,7 @@ These Terms are governed by the laws of the Republic of India, without regard to
 
 ### 17.2. Forum
 
-Subject to §17.3 and §17.4, the courts at **{{YOUR_CITY}}, {{YOUR_STATE}}, India** shall have **exclusive jurisdiction** over any dispute arising out of or related to these Terms, and you consent to personal jurisdiction there.
+Subject to §17.3 and §17.4, the courts at **Bengaluru, Karnataka, India** shall have **exclusive jurisdiction** over any dispute arising out of or related to these Terms, and you consent to personal jurisdiction there.
 
 ### 17.3. Mandatory consumer protections
 
@@ -267,9 +267,9 @@ This §17.4 **does not apply** to users resident in India, the EEA, the UK, or a
 
 ## 18. Grievance Redressal (India) — IT Rules 2021 / Consumer Protection (E-Commerce) Rules 2020
 
-> **Grievance Officer:** {{YOUR_FULL_LEGAL_NAME}}
+> **Grievance Officer:** Prakhar Singh
 > **Designation:** Proprietor, VibeDrive
-> **Address:** {{YOUR_REGISTERED_OFFICE_ADDRESS}}
+> **Address:** 601, Pro-4 Pavillion PG, Spice Garden Layout, Marathahalli, Bengaluru, Karnataka 560037, India
 > **Email:** contact@vibedrive.app
 > **Acknowledgment time:** within **48 hours** of receipt
 > **Resolution time:** within **30 days** of receipt of complaint
@@ -284,7 +284,7 @@ Indian users may also escalate to:
 
 We may update these Terms from time to time. The "Last updated" date at the top reflects the current version. If we make material changes — particularly to the subscription, refund, or dispute-resolution clauses — we will notify you in-app and give at least **30 days' notice** before the change takes effect, with the right to cancel your subscription before then. Continued use of the Service after the effective date of revised Terms constitutes acceptance.
 
-Older versions are available at {{TERMS_ARCHIVE_URL}}.
+Older versions are available on request via contact@vibedrive.app.
 
 ## 20. Miscellaneous
 
@@ -299,8 +299,8 @@ Older versions are available at {{TERMS_ARCHIVE_URL}}.
 
 ## 21. Contact
 
-**{{YOUR_FULL_LEGAL_NAME}}** (sole proprietor, trading as "VibeDrive")
-{{YOUR_REGISTERED_OFFICE_ADDRESS}}
+**Prakhar Singh** (sole proprietor, trading as "VibeDrive")
+601, Pro-4 Pavillion PG, Spice Garden Layout, Marathahalli, Bengaluru, Karnataka 560037, India
 General support: contact@vibedrive.app
 Privacy / data requests: contact@vibedrive.app
 Grievance / copyright complaints: contact@vibedrive.app

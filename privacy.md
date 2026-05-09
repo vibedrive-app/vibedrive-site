@@ -9,20 +9,20 @@ permalink: /privacy/
 **Effective date:** 2026-05-02
 **Last updated:** 2026-05-02
 
-> **Draft notice.** This document is a publishable starting point reviewed by an AI assistant against the VibeDrive client and Cloud Run backend code. It is **not legal advice**. Before linking it from the Play Store listing or in-app, have it reviewed by an advocate enrolled with an Indian Bar Council, fill in `{{YOUR_FULL_LEGAL_NAME}}` and `{{YOUR_REGISTERED_OFFICE_ADDRESS}}`, and confirm the data flows still match what's deployed.
+> **Draft notice.** This document is a publishable starting point reviewed by an AI assistant against the VibeDrive client and Cloud Run backend code. It is **not legal advice**. Before linking it from the Play Store listing or in-app, have it reviewed by an advocate enrolled with an Indian Bar Council, and confirm the data flows still match what's deployed.
 
 ---
 
 ## 1. Who we are
 
-This Privacy Policy describes how **{{YOUR_FULL_LEGAL_NAME}}**, an individual carrying on business as a sole proprietor in India under the trade name **"VibeDrive"** (referred to here as "**we**", "**us**", "**I**", or "**VibeDrive**"), collects, uses, and shares your personal data when you use the **VibeDrive** mobile application for Android (Google Play package `com.drivex.vibedrive`, the "**App**").
+This Privacy Policy describes how **Prakhar Singh**, an individual carrying on business as a sole proprietor in India under the trade name **"VibeDrive"** (referred to here as "**we**", "**us**", "**I**", or "**VibeDrive**"), collects, uses, and shares your personal data when you use the **VibeDrive** mobile application for Android (Google Play package `com.drivex.vibedrive`, the "**App**").
 
 For the purposes of the **Digital Personal Data Protection Act, 2023** (India) ("**DPDP Act**"), I am the **Data Fiduciary** in respect of your personal data. For the EU GDPR / UK GDPR, I am the **controller**.
 
 | Detail | Value |
 |---|---|
-| Data Fiduciary / Controller | {{YOUR_FULL_LEGAL_NAME}}, sole proprietor trading as "VibeDrive" |
-| Principal place of business | {{YOUR_REGISTERED_OFFICE_ADDRESS}} |
+| Data Fiduciary / Controller | Prakhar Singh, sole proprietor trading as "VibeDrive" |
+| Principal place of business | 601, Pro-4 Pavillion PG, Spice Garden Layout, Marathahalli, Bengaluru, Karnataka 560037, India |
 | General contact | contact@vibedrive.app |
 | Privacy / data-rights contact | contact@vibedrive.app |
 | Grievance Officer (India, DPDP §8(4) / §13) | See §16 |
@@ -275,7 +275,7 @@ To exercise, email contact@vibedrive.app or use the in-app **Delete account** ac
 You can delete your account in three ways:
 
 1. **In the App**: **Settings → Account → Delete account**. Confirm the warning. The App calls `DELETE /v1/users/me` on our backend.
-2. **Web form** (if available): {{ACCOUNT_DELETION_WEB_URL}}.
+2. **Web form** (if available): https://vibedrive.app/account-deletion/.
 3. **By email**: send "Delete my VibeDrive account" from your registered Google account email to contact@vibedrive.app. We will process within 7 days of verification.
 
 When the deletion request is processed, the backend executes the following cascade:
@@ -313,9 +313,9 @@ Sensor permissions like accelerometer and gyroscope are not runtime-permissioned
 
 Per §8(4) and §13 of the DPDP Act 2023 and Rule 5(3) of the Consumer Protection (E-Commerce) Rules, 2020:
 
-> **Grievance Officer:** {{YOUR_FULL_LEGAL_NAME}}
+> **Grievance Officer:** Prakhar Singh
 > **Designation:** Proprietor, VibeDrive
-> **Address:** {{YOUR_REGISTERED_OFFICE_ADDRESS}}
+> **Address:** 601, Pro-4 Pavillion PG, Spice Garden Layout, Marathahalli, Bengaluru, Karnataka 560037, India
 > **Email:** contact@vibedrive.app
 > **Acknowledgment time:** within **48 hours** of receipt of grievance
 > **Resolution time:** within **30 days** of receipt of grievance
@@ -324,12 +324,12 @@ If you are not satisfied with the response, you may escalate to the Data Protect
 
 ## 17. Changes to this Policy
 
-We may update this policy. The "Last updated" date at the top reflects the current version. If we make material changes — new categories of personal data, new purposes of processing, or sharing with new categories of third parties — we will notify you in-app and, where required by law, ask for renewed consent before the change takes effect. Older versions will be available at {{POLICY_ARCHIVE_URL}}.
+We may update this policy. The "Last updated" date at the top reflects the current version. If we make material changes — new categories of personal data, new purposes of processing, or sharing with new categories of third parties — we will notify you in-app and, where required by law, ask for renewed consent before the change takes effect. Older versions are available on request via contact@vibedrive.app.
 
 ## 18. Contact
 
-**{{YOUR_FULL_LEGAL_NAME}}** (sole proprietor, trading as "VibeDrive")
-{{YOUR_REGISTERED_OFFICE_ADDRESS}}
+**Prakhar Singh** (sole proprietor, trading as "VibeDrive")
+601, Pro-4 Pavillion PG, Spice Garden Layout, Marathahalli, Bengaluru, Karnataka 560037, India
 Email: contact@vibedrive.app
 
 For privacy questions, rights requests, grievances, or complaints, write from your registered Google account email.
